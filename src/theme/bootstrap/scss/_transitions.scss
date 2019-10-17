@@ -1,0 +1,52 @@
+// stylelint-disable selector-no-qualifying-type
+
+.fade {
+  opacity: 0;
+  @include transition($transition-fade);
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+.collapse {
+  display: none;
+  background: white;
+  border: 1px solid;
+  border-radius: 5px;
+  width: 200px;
+  max-width: 200px;
+  position: fixed;
+  right: 0px;
+  top: 50px;
+
+  &.show {
+    display: block;
+  }
+}
+
+tr {
+  &.collapse.show {
+    display: table-row;
+  }
+}
+
+tbody {
+  &.collapse.show {
+    display: table-row-group;
+  }
+}
+
+.collapsing {
+  position: fixed;
+  right: 0px;
+  top: 50px;
+  height: 0;
+  background: white;
+  border: 1px solid;
+  border-radius: 5px;
+  width: 200px;
+  max-width: 200px;
+  overflow: hidden;
+  @include transition($transition-collapse);
+}

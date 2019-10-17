@@ -1,0 +1,47 @@
+$brand: #00CECC;
+$checkboxSize: 25px;
+$uncheckedBG: transparent;
+$checkedBG: $brand;
+$checkedColor: white;
+$disabledBG: rgba(0, 0, 0, .35);
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.React__checkbox--input {
+  display: none;
+}
+
+.React__checkbox--input {
+  + span {
+    color: red;
+    display: flex;
+    width: $checkboxSize;
+    height: $checkboxSize;
+    border: 1px solid $brand;
+    background: $uncheckedBG;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 5px;
+    box-sizing: border-box;
+    transition: all 150ms;
+  }
+  &:checked {
+    + span {
+      border-width: $checkboxSize / 2;
+      &::before {
+        content: 'check';
+        font-family: 'Material Icons';
+        font-size: 30px;
+        color: $checkedColor;
+      }
+    }
+  }
+  &:disabled {
+    + span {
+      background: $disabledBG;
+    }
+  }
+}
